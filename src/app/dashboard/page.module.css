@@ -1,0 +1,84 @@
+.dashboard { max-width: 1100px; }
+.loading { padding: var(--space-3xl); text-align: center; color: var(--text-muted); }
+
+.header { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-lg); margin-bottom: var(--space-2xl); }
+.header h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+.header p { font-size: 0.9375rem; color: var(--text-secondary); }
+.headerBadge { display: flex; align-items: center; gap: var(--space-sm); font-size: 0.8125rem; font-weight: 600; color: var(--foam-400); padding: 0.25rem 0.75rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-full); white-space: nowrap; }
+.pulseDot { width: 8px; height: 8px; border-radius: 50%; background: var(--foam-400); animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* KPI Grid */
+.kpiGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-bottom: var(--space-2xl); }
+.kpiCard { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-lg) !important; position: relative; }
+.kpiIcon { font-size: 1.5rem; flex-shrink: 0; }
+.kpiContent { flex: 1; display: flex; flex-direction: column; }
+.kpiValue { font-size: 1.75rem; font-weight: 800; font-family: var(--font-mono); color: var(--text-primary); line-height: 1; }
+.kpiLabel { font-size: 0.6875rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; margin-top: 4px; }
+.kpiLink { font-size: 0.75rem; color: var(--ocean-400); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.kpiLink:hover { color: var(--ocean-300); }
+.kpiTarget { font-size: 0.625rem; color: var(--gold-400); font-weight: 700; }
+.kpiSub { font-size: 0.6875rem; color: var(--text-muted); }
+
+/* Main Grid */
+.mainGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+.section { padding: var(--space-lg) !important; }
+.sectionHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-lg); }
+.sectionHeader h3 { font-size: 0.875rem; font-weight: 700; }
+.sectionLink { font-size: 0.75rem; color: var(--ocean-400); text-decoration: none; font-weight: 600; }
+.sectionLink:hover { color: var(--ocean-300); }
+
+/* Activity / Log Items */
+.activityItem { display: flex; align-items: flex-start; gap: var(--space-md); padding: var(--space-sm) 0; text-decoration: none; color: inherit; border-bottom: 1px solid var(--border-primary); transition: all var(--transition-fast); }
+.activityItem:last-child { border-bottom: none; }
+.activityItem:hover .activityTitle { color: var(--ocean-300); }
+.activityDot { width: 8px; height: 8px; border-radius: 50%; background: var(--ocean-500); flex-shrink: 0; margin-top: 6px; }
+.activityContent { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.activityTitle { font-size: 0.8125rem; font-weight: 600; transition: color var(--transition-fast); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.activityDate { font-size: 0.6875rem; color: var(--text-muted); }
+
+/* Category Grid */
+.catGrid { display: flex; flex-direction: column; gap: var(--space-md); }
+.catItem { display: flex; flex-direction: column; gap: 4px; }
+.catBar { height: 4px; background: var(--bg-tertiary); border-radius: var(--radius-full); overflow: hidden; }
+.catBarFill { height: 100%; background: var(--ocean-500); border-radius: var(--radius-full); transition: width 0.5s ease; min-width: 4px; }
+.catInfo { display: flex; align-items: center; gap: var(--space-sm); }
+.catCode { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; color: var(--ocean-300); }
+.catName { font-size: 0.75rem; color: var(--text-secondary); flex: 1; }
+.catCount { font-size: 0.75rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono); }
+
+/* Location Items */
+.locItem { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-sm) 0; border-bottom: 1px solid var(--border-primary); }
+.locItem:last-child { border-bottom: none; }
+.locInfo { display: flex; align-items: center; gap: var(--space-sm); width: 140px; flex-shrink: 0; }
+.locPriority { font-size: 0.625rem; font-weight: 800; font-family: var(--font-mono); color: var(--text-muted); background: var(--bg-tertiary); padding: 1px 4px; border-radius: var(--radius-sm); }
+.locName { font-size: 0.8125rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.locBar { flex: 1; height: 6px; background: var(--bg-tertiary); border-radius: var(--radius-full); overflow: hidden; }
+.locBarFill { height: 100%; border-radius: var(--radius-full); transition: width 0.5s ease; }
+.locPower { font-size: 0.75rem; font-weight: 700; font-family: var(--font-mono); width: 70px; text-align: right; flex-shrink: 0; }
+
+/* TKDN Donut */
+.tkdnDonut { display: flex; justify-content: center; margin-bottom: var(--space-lg); }
+.donutSvg { width: 120px; height: 120px; }
+.tkdnLegend { display: flex; flex-direction: column; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+.tkdnLegendItem { display: flex; align-items: center; gap: var(--space-sm); font-size: 0.8125rem; color: var(--text-secondary); }
+.tkdnLegendItem strong { margin-left: auto; font-family: var(--font-mono); color: var(--text-primary); }
+.tkdnDot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+.tkdnTimeline { border-top: 1px solid var(--border-primary); padding-top: var(--space-md); }
+.tkdnTimelineLabel { font-size: 0.6875rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: var(--space-sm); }
+.tkdnStep { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: 6px; }
+.tkdnYear { font-size: 0.6875rem; color: var(--text-muted); width: 65px; flex-shrink: 0; }
+.tkdnStepBar { flex: 1; height: 4px; background: var(--bg-tertiary); border-radius: var(--radius-full); overflow: hidden; }
+.tkdnStepBar > div { height: 100%; border-radius: var(--radius-full); }
+.tkdnPct { font-size: 0.6875rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono); width: 30px; text-align: right; }
+
+@media (max-width: 1024px) {
+  .kpiGrid { grid-template-columns: repeat(2, 1fr); }
+  .mainGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .header { flex-direction: column; }
+  .kpiGrid { grid-template-columns: 1fr; }
+  .locInfo { width: 100px; }
+}

@@ -1,0 +1,71 @@
+.waveContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+}
+
+.wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wave1 {
+  animation: waveDrift 8s linear infinite;
+  z-index: 3;
+}
+
+.wave2 {
+  animation: waveDrift 12s linear infinite reverse;
+  bottom: 4px;
+  z-index: 2;
+}
+
+.wave3 {
+  animation: waveDrift 16s linear infinite;
+  bottom: 8px;
+  z-index: 1;
+}
+
+@keyframes waveDrift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Foam particles */
+.foam {
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.foamDot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  animation: foamFloat 4s ease-in-out infinite;
+}
+
+@keyframes foamFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-12px) scale(1.3);
+    opacity: 0.7;
+  }
+}
